@@ -24,7 +24,7 @@ spring:
 
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
-    show-sql: false
+    show-sql: true
     hibernate:
       ddl-auto: create
 
@@ -40,3 +40,17 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://eurekaregistry:8761/eureka/
+# Datasource and JPA configuration to be used for storing the OAuth authorization details
+# and token store
+spring:
+  datasource:
+    url: jdbc:mysql://mysqldb:3306/oauth2
+    username: root
+    password: mvp11mgp
+    driver-class: com.mysql.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
